@@ -351,8 +351,7 @@ void ts_tree_set_children(Tree *self, uint32_t child_count, Tree **children,
   }
 
   if (self->symbol == ts_builtin_sym_error) {
-    self->error_cost += ERROR_COST_PER_SKIPPED_CHAR * self->size.bytes +
-                        ERROR_COST_PER_SKIPPED_LINE * self->size.extent.row;
+    self->error_cost += ERROR_COST_PER_SKIPPED_LINE * self->size.extent.row;
     for (uint32_t i = 0; i < child_count; i++)
       if (!self->children[i]->extra)
         self->error_cost += ERROR_COST_PER_SKIPPED_TREE;

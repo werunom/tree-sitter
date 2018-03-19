@@ -113,8 +113,12 @@ for (auto &language_name : test_languages) {
             ts_document_parse(document);
             assert_correct_tree_size(document, input->content);
 
+            // printf("%s\n\n", input->content.c_str());
+
             ts_document_edit(document, input->undo());
             assert_correct_tree_size(document, input->content);
+
+            // printf("%s\n\n", input->content.c_str());
 
             TSRange *ranges;
             uint32_t range_count;

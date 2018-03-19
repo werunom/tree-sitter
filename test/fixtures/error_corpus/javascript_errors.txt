@@ -79,9 +79,10 @@ if ({a: 'b'} {c: 'd'}) {
     (statement_block
       (expression_statement (assignment_expression
         (identifier)
-        (ERROR (function
-          (formal_parameters (identifier))
-          (statement_block (expression_statement (identifier)))))
+        (ERROR
+          (function
+            (formal_parameters (identifier))
+            (statement_block (expression_statement (identifier)))))
         (function
           (formal_parameters (identifier))
           (statement_block (expression_statement (identifier)))))))))
