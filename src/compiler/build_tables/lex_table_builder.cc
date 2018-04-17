@@ -191,6 +191,7 @@ class LexTableBuilderImpl : public LexTableBuilder {
         Symbol other_symbol = Symbol::terminal(j);
         if ((get_conflict_status(other_symbol, symbol) & (MatchesShorterStringWithinSeparators|MatchesLongerStringWithValidNextChar)) &&
             !keyword_symbols.contains(other_symbol) &&
+            !coincident_tokens_by_token[j].contains(symbol) &&
             keyword_symbols.intersects(coincident_tokens_by_token[j])) {
           shadows_other_tokens = true;
           break;
